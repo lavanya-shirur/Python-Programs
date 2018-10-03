@@ -6,7 +6,6 @@ import random
 import re
 import sys
 
-
 if __name__ == '__main__':
     N = int(input())
     if(N>=1 and N<=100):
