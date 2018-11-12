@@ -10,6 +10,7 @@ i2=int(input())
 print("i2 value is",i2)
 print("enter d2 value")
 d2=float(input())
+print("enter string value")
 s2=input()
 #s2='is the best place to learn and practice coding!'
 
