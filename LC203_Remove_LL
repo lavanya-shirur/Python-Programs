@@ -1,0 +1,46 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def removeElements(self, head, val):
+        """
+        :type head: ListNode
+        :type val: int
+        :rtype: ListNode
+        
+        def length(head):
+            cur= head
+            total=0
+            while(cur.next!=None):
+                total+=1
+                cur=cur.next
+    #        print(total)
+            return total
+        
+        
+        cur= head
+        while(cur.next!=None and cur.val!=val ):
+            prev=cur
+            cur=cur.next
+        prev.next=cur.next
+        return head
+        """        
+        cur = head
+        #if the list is empty
+        if head is None:
+            return head
+
+        #remove every val except for the head
+        while cur.next:
+            if cur.next.val == val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+
+        #remove head if necessary
+        if head.val == val:
+            head = head.next
+        return head
