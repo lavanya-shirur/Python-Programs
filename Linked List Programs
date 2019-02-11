@@ -1,0 +1,127 @@
+class node :
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+
+class linkedlist:
+    def __init__(self):
+        self.head=node()
+
+    def append(self,data):
+        new_node=node(data) #creates a new node by calling the class node and inserting data
+        cur=self.head
+        while cur.next!=None:
+            cur=cur.next
+        cur.next=new_node
+
+    def length(self):
+        cur=self.head
+        total=0
+        while cur.next!=None:
+            total += 1
+            cur=cur.next
+        return total
+
+    def display(self):
+        elem=[]
+        cur=self.head
+        while cur.next!=None:
+            cur = cur.next
+            elem.append(cur.data)
+        print (elem)
+
+    def get(self,index):
+        if index>=self.length():
+            print ("ERROR")
+            return None
+        cur_index=0
+        cur=self.head
+        while True:
+            cur=cur.next
+            if (cur_index==index):
+                return cur.data
+            cur_index+=1
+
+    def erase(self,index):
+        new=[]
+        if index>=self.length():
+            print("ERROR")
+            return None
+        cur_index=0
+        cur=self.head
+        while True:
+            last=cur
+            cur=cur.next
+            if(cur_index==index):
+                last.next=cur.next
+                return
+            cur_index+=1
+
+    def search(self,num):
+        pos=0
+        cur=self.head
+        while(cur.data != num):
+            cur=cur.next
+            pos+=1
+            #print("not present")
+        return pos
+
+    def insertatpos(self,node,newdata):
+        cur=self.head
+        new=node(newdata)
+        while(cur.data!=node):
+            cur=cur.next
+        new.next = cur.next
+        cur.next= new
+
+
+    def deletelastnode(self):
+        cur=head
+        slow=head
+        while(cur.next!=None):
+            cur=cur.next
+
+
+    def reverse(self):
+        prev=None
+        cur = self.head
+        while(cur is not None):
+            next = cur.next
+            cur.next=prev
+            prev=cur
+            cur = next
+        self.head = prev
+        #print(self.head)
+        #return self.head
+
+
+
+my_list=linkedlist()
+#my_list.display()
+my_list.append(1)
+my_list.append(12)
+my_list.append(4)
+my_list.append(5)
+my_list.append(412)
+my_list.append(111)
+
+#my_list.display()
+new=my_list.length()
+#print(new)
+#print(my_list.get(1))
+#my_list.erase(1)
+my_list.display()
+
+lenlist=my_list.length()
+if(lenlist%2!=0):
+    middle=lenlist/2
+    print(my_list.get(int(middle)))
+else:
+    middle=(int(lenlist/2))
+    print(my_list.get(int(middle)))
+
+#print(my_list.search(412))
+
+#my_list.insertatpos(4,999)
+print (my_list.reverse())
+my_list.display()
