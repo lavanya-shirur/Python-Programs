@@ -1,0 +1,23 @@
+class Solution:
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        upcounter=0
+        downcounter=0
+        leftcounter=0
+        rightcounter=0
+        for move in moves:
+            if (move == 'U'):
+                upcounter+=1
+            if (move == 'D'):
+                upcounter-=1
+            if (move == 'R'):
+                rightcounter+=1
+            if (move == 'L'):
+                rightcounter-=1
+        if (((upcounter==0) and (rightcounter)==0)):
+            return True
+        else : 
+            return False 
