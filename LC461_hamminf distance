@@ -1,0 +1,18 @@
+class Solution:
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        #convert the numbers to corresponding binary numbers 
+        
+        res=bin(x^y)
+        print(res[2:])
+        
+        #newx=format(int(x),'04b')
+        #newy=format(int(y),'04b')
+        #print(newx,newy)
+        #final=int(newx) ^ int(newy)
+        #final=str(final)
+        return (res.count('1'))
