@@ -1,0 +1,21 @@
+import itertools
+class Solution:
+    def arrayPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        #nums=set(nums)
+        #newlist=[]
+        #size=int(len(nums)/2)
+        return sum(sorted(nums)[::2])
+        
+       # def findsubsets(S,m):
+       #     return list(itertools.combinations(S, m))
+        #newlist.append(findsubsets(nums,size)) 
+        #newlist=list(newlist)
+        #for sublist in newlist:
+        ##    print(sublist)
+         #   for i in range(len(sublist)):
+         #       print(min(sublist[i]))
+                
