@@ -1,0 +1,24 @@
+class Solution:
+    def selfDividingNumbers(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
+        
+        output=[]
+        newlist = []
+
+        for num in range(left, right + 1):
+            lis1 = [int(x) for x in str(num)]
+            notDivisible = True
+            for elem in lis1:
+                if ((elem==0) or (num % elem != 0)):
+                    notDivisible=False
+            if (notDivisible!=True):
+                pass
+            else:
+                newlist.append(num)
+        return(newlist)
+            
+            
