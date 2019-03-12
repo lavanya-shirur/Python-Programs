@@ -13,3 +13,9 @@ https://www.youtube.com/watch?v=JlMyYuY1aXU
 
 reverse linked list 
 https://www.geeksforgeeks.org/reverse-a-linked-list/
+
+binary trees traversal 
+https://www.youtube.com/watch?v=6oL-0TdVy28&t=970s
+
+max depth of a binary tree 
+https://www.youtube.com/watch?v=YT1994beXn0
