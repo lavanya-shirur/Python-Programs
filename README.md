@@ -19,3 +19,9 @@ https://www.youtube.com/watch?v=6oL-0TdVy28&t=970s
 
 max depth of a binary tree 
 https://www.youtube.com/watch?v=YT1994beXn0
+
+excellent link to know about how internet works - 3d video
+https://www.youtube.com/watch?v=xIuBmOufbls
+
+link to create website using python django framework
+https://www.youtube.com/watch?v=F5mRW0jo-U4&t=121s
