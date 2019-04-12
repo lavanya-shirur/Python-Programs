@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/array-partition-i/
 import itertools
 class Solution:
     def arrayPairSum(self, nums):
@@ -10,6 +11,8 @@ class Solution:
         #size=int(len(nums)/2)
         return sum(sorted(nums)[::2])
         
+        
+        ########### Different method #######
        # def findsubsets(S,m):
        #     return list(itertools.combinations(S, m))
         #newlist.append(findsubsets(nums,size)) 
