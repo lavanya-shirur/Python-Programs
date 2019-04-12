@@ -1,0 +1,16 @@
+# https://leetcode.com/problems/monotonic-array/
+class Solution:
+    def isMonotonic(self, A):
+        """
+        :type A: List[int]
+        :rtype: bool
+        """
+        
+        #sort the array and check if its equal to initial Array or if its equal to reversed array 
+    
+
+        return (sorted(A)==A) or (sorted(A)==A[::-1])
+            #return (True)
+        #else:
+         #   return (False)
+    
