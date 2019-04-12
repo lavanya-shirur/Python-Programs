@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/valid-parentheses/
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        valids = ['()', '[]', '{}']
+        if len(s) % 2 != 0:
+            return False
+        
+        while len(s) != 0:
+            lenstk = len(s)
+            for val in valids:
+                s = s.replace(val, '')
+            if len(s) == lenstk:
+                return False
+        return True
