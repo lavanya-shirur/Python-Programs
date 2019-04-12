@@ -1,0 +1,40 @@
+# https://leetcode.com/problems/first-unique-character-in-a-string/
+class Solution:
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        
+        new=''
+        final=[]
+        
+        if (len(s)==1):
+            return 0
+        
+        for ch in s:
+            if (set(ch)==set(s)):
+                    return -1        
+        if (s==""):
+            return -1
+        
+        else:
+            for ch in s: 
+                if (s.count(ch)== 1 ):
+                    final.append(s.index(ch))
+                    output=min(final)
+                    if not final:
+                        output= -1
+                        return -1
+                    else:
+                        return output
+            return -1
+            """
+        dicti={}
+        for ch in s:
+            dicti[ch]=dicti.get(ch,0)+1
+        print(dicti)
+               
+        for i,ch in enumerate(s):
+            if dicti[ch]==1:
+                return i
+        return -1 
