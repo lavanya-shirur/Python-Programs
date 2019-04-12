@@ -1,0 +1,47 @@
+# https://leetcode.com/problems/plus-one/
+class Solution:
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        
+        
+        new=[]
+        for i in (digits):
+            if(i==0):
+                return [i+1]
+        
+        if (len(digits)==1):
+            new.append(sum(digits+[1]))
+            return(new)
+            
+            if (len(new)>1):
+                global fin
+                return [int(i) for i in str(new)]
+            #return fin
+        
+        total=len(digits)
+        for i in range(len(digits)-1):
+            new.append(digits[i])
+        
+        new.append(digits[total-1]+1)
+        
+        return(new)
+        """
+        new=0
+        temp=[]
+        new=int(''.join(str(i) for i in digits))
+        new=new+1
+        #digits[-1] += 1
+        #print (digits)
+        #new=int(''.join(str(i) for i in digits))
+        
+        for i in range(len(str(new))):
+            inter=new%10
+            new=new//10
+            temp.append(inter)
+        return(temp[::-1])
+        
+        
+        
+        
