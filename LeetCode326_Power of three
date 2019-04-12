@@ -1,0 +1,15 @@
+# https://leetcode.com/problems/power-of-three/
+class Solution:
+    def isPowerOfThree(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        if n==0:
+            return False 
+        while(n!=1):
+            if (n/3).is_integer()==True:
+                n=n/3
+            else:
+                return False 
+        return True 
