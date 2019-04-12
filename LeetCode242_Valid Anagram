@@ -1,0 +1,36 @@
+# https://leetcode.com/problems/valid-anagram/
+class Solution:
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+       # if len(t)<1:
+        #return True
+        
+        dicts={}
+        for ch in s:
+            dicts[ch]=dicts.get(ch,0)+1
+        print(dicts)
+        
+        dictt={}
+        for ch in t:
+            dictt[ch]=dictt.get(ch,0)+1
+        print(dictt)
+        if (dictt==dicts):
+            return True
+        else :
+            return False
+        '''
+        
+        if len(t)>len(s):
+            return (False)
+        
+        for ch in t:
+            if ch in s:
+                return (True)
+            else :
+                return (False )
+                
+        '''
