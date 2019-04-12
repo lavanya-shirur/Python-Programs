@@ -1,0 +1,39 @@
+# https://leetcode.com/problems/ugly-number/
+class Solution(object):
+    def isUgly(self, num):
+        """
+        :type num: int
+        :rtype: bool
+       
+        def factors(n):
+            factors=[]
+            for i in range(1,n):
+                if(n%i==0):
+                    factors.append(i)
+            return factors
+                    
+        n=num
+        primes=[1,2,3,5]
+        
+        if(len(str(n)))>8:
+            return False
+        #Base case
+        if(n==1 or n==2 or n==3 or n==5):
+            return True 
+        
+        new=[]
+        new=factors(n)
+        print(new)
+        t=0 
+        for i in new:
+            if i in primes:
+                t+=1     
+        if(t==len(new)):
+            return True
+        else:
+            return False
+         """
+        for p in 2, 3, 5:
+            while num % p == 0 < num:
+                num = num / p
+        return num == 1
