@@ -1,0 +1,21 @@
+# https://leetcode.com/problems/number-complement/
+class Solution(object):
+    def findComplement(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        new=[]
+        binum=(bin(num))
+        binum=binum[2:]
+        for ch in binum:
+           # print (ch)
+            if ch=='1':
+                new.append(0)
+            else:
+                new.append(1)
+        
+        new=''.join(map(str, new))
+       
+        return int(new,2)
+    
