@@ -1,0 +1,22 @@
+# https://leetcode.com/problems/binary-gap/
+class Solution:
+    def binaryGap(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        indices=[]
+        binary=bin(N)
+        new=binary
+        counter=0
+        diff=[]
+        indices = [i for i, x in enumerate(new) if x == "1"]
+        if (len(indices) < 2 ):
+            return 0
+        for i in range(len(indices)-1):
+            diff.append(indices[i+1]-indices[i])
+            global final
+            final=max(diff)
+        return final
+            
+      
