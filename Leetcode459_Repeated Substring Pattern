@@ -1,0 +1,14 @@
+# https://leetcode.com/problems/repeated-substring-pattern/
+class Solution:
+    def repeatedSubstringPattern(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        kumar=s+s
+        temp=kumar[1:-1]
+        
+        if (temp.find(s) ==-1):
+            return False 
+        else:
+            return True 
