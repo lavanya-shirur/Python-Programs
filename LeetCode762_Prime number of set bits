@@ -1,0 +1,41 @@
+# https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
+import math 
+class Solution(object):
+    def countPrimeSetBits(self, L, R):
+        """
+        :type L: int
+        :type R: int
+        :rtype: int
+        """
+        binary_vals=[]
+        set_bits=[]
+        for i in range(L,R+1):
+            binary_vals.append(bin(i))
+        #print(binary_vals)
+        
+        for j in binary_vals:
+            set_bits.append(j.count('1'))
+        
+
+        #print(set_bits)
+        count=0
+        primes = {2, 3, 5, 7, 11, 13, 17, 19}
+        for k in set_bits:
+            if k in primes:
+                count+=1
+        return(count)
+        """
+        primes=[]
+        for k in range(2,len(set_bits)): 
+            
+            prime=True
+            for l in range(2,int(math.sqrt(k))+1):
+                if k<2:
+                    prime = False
+                if k%l==0 and k%2==0:
+                    prime=False
+            if prime:
+                primes.append(k)
+        #print(primes)
+        return (len(primes)) 
+        return sum(map(lambda x: bin(x).count('1') in primes, range(L, R+1)))
