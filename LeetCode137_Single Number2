@@ -1,0 +1,17 @@
+# https://leetcode.com/problems/single-number-ii/
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dicti={}
+        for ch in nums:
+            dicti[ch]=dicti.get(ch,0)+1
+        print(dicti)
+        
+        for key,value in dicti.items():
+            if(value<3):
+                return(key)
+        
+      
