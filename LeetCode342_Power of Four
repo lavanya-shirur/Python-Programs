@@ -1,0 +1,16 @@
+# https://leetcode.com/problems/power-of-four/
+class Solution:
+    def isPowerOfFour(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        if num==0:
+            return False 
+        while(num!=1):
+            if (num/4).is_integer()==True:
+                num=num/4
+                
+            else:
+                return False
+        return True 
