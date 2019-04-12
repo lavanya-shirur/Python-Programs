@@ -1,0 +1,16 @@
+# https://leetcode.com/problems/transpose-matrix/
+class Solution(object):
+    def transpose(self, A):
+        """
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        rows=len(A[0])
+        cols=len(A)
+        #print(rows,cols)
+        lists=[[0 for col in range(cols)] for row in range(rows)]
+        #print(lists)
+        for r in range(rows):
+            for c in range(cols):
+                lists[r][c]=A[c][r]
+        return(lists)
