@@ -1,0 +1,12 @@
+# https://leetcode.com/problems/remove-element/
+class Solution:
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        count=nums.count(val)
+        print(count)
+        for i in range(count):
+            nums.remove(val)
