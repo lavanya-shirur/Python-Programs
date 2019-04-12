@@ -1,0 +1,43 @@
+# https://leetcode.com/problems/number-of-1-bits/
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        #############method 1 ####
+        oneslist=[]
+        #print(n)
+        temp=bin(n)
+        temp=temp[2:]
+        #print(temp)
+    
+        res = [map(oneslist.append(x)) for x in temp]
+        print (res)
+    
+        for ones in temp:
+            #print(ones)
+            if ones=='1':
+                oneslist.append(ones)
+        return (len(oneslist))
+        
+        ##########method 2 ##############
+        """
+        counter=0    
+        mask=1
+        
+        while n > 0:
+            if(( n & mask ) != 0):
+                counter += 1
+            n >>= 1
+        return (counter)
+    
+        
+        """
+        ###########method 3########
+        count = 0
+        while n > 0:
+            if n&1: #check last bit
+                count += 1
+            n = n >> 1 # shift right
+        return count
+        """
