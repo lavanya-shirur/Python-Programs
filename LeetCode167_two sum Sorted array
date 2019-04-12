@@ -1,0 +1,23 @@
+# https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        #create a dictionary 
+        dicti = {}
+        
+        #enumerate is used to take index and elements of list at same time 
+        for i, num in enumerate(numbers):
+            
+            #since two numbers in dictionary sum upto target, subtracting one element from target will give the other element, and search for that element in dictionary. 
+            
+            if target-num in dicti:    
+            
+            #increment one , since the answers are not zero based 
+                return [dicti [target-num]+1, i+1]
+            
+            dicti[num] = i   
+        
