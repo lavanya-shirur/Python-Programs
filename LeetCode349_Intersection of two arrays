@@ -1,0 +1,20 @@
+# https://leetcode.com/problems/intersection-of-two-arrays/
+class Solution:
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        #There is a function called intersection, which will return the common 
+        #elements in two sets 
+        
+        
+        new=[]
+        
+        #so convert the list to set then call intersection 
+        new=list(set(nums2).intersection(nums1))
+        
+        #return the list
+        return new
+        
