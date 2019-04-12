@@ -1,0 +1,20 @@
+# https://leetcode.com/problems/student-attendance-record-i/
+class Solution:
+    def checkRecord(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        numofA=0
+        numofL=[]
+        
+        for ch in s:
+            if ch=='A':
+                numofA += 1
+            
+        if (numofA > 1):   
+            return False
+        if 'LLL' in s:
+            return False
+        else:
+            return True
