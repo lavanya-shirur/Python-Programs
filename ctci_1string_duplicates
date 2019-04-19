@@ -1,0 +1,33 @@
+def string_duplicate(string1):
+    length=len(string1)
+    print(length)
+    for i in range(length):
+        if string1[i] in (string1[:i:]):
+            print("duplicate")
+            return True
+    else:
+        print("no duplicate")
+        return False
+
+def string_duplicate2(string1):
+    asc=''.join(set(string1))
+    count=0
+    normalcount=0
+
+    for i in asc:
+        count+=ord(i)
+    print(count)
+
+    for j in string1:
+        normalcount += ord(j)
+    print(normalcount)
+
+    if count==normalcount:
+        print("no dupliactes")
+        return True
+
+    else:
+        print("duplicates")
+        return False
+
+string_duplicate2("asdfghjklpoiuytrew")
