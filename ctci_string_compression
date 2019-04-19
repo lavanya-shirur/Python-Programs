@@ -1,0 +1,47 @@
+def compress(string):
+    dicti={}
+    res=""
+    for i,ch in enumerate(string):
+        if ch not in dicti:
+            dicti[string[i-1]]
+            res+=string[i-1]+str(dicti[string[i-1]])
+            del(dicti[string[i-1]])
+        else:
+            dicti[ch]=dicti.get(ch,0)+1
+    print(dicti)
+
+    new = []
+    for key, value in dicti.items():
+        new.append(key)
+        new.append(value)
+
+    str1 = ''.join(str(e) for e in new)
+    print(str1)
+    if(len(str1)==len(string)):
+        return string
+    else:
+        return str1
+
+#compress("aaaabbbbbbbbbbffffffffffaaa")
+
+def encode(string):
+    print(string)
+    count=1
+    res=""
+    i=0
+
+    for i in range(len(string)-1):
+        if string[i+1]!=string[i]:
+            res+=string[i]
+            res+=str(count)
+            count=1
+        else:
+            count+=1
+        i+=1
+    res+=string[i]+str(count)
+    print(res)
+
+encode("aabccaa")
+
+
+
