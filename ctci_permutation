@@ -1,0 +1,48 @@
+def permute(a, l, r):
+    new=[]
+    final=[]
+    if l==r:
+        new.append(''.join(a))
+        print(new)
+        return new
+    else:
+        for i in range(l,r+1):
+            #swap starting char with character at i position
+            a[l], a[i] = a[i], a[l]
+
+            #recursively call permute function
+            permute(a, l+1, r)
+
+            #swap starting charecter with ith character again
+            a[l], a[i] = a[i], a[l]
+string="lavv"
+#permute(list(string),0,len(string)-1)
+
+
+def twostrings(s1,s2):
+    if len(s1)!=len(s2):
+        return False
+    else:
+        if(''.join(sorted(s1))==''.join(sorted(s2))):
+            return True
+        else:
+            return False
+#print(twostrings("lav","vala"))
+
+def dictistrings(s1,s2):
+    dictis1={}
+    for ch in s1:
+        dictis1[ch]=dictis1.get(ch,0)+1
+    print(dictis1)
+
+    dictis2={}
+    for ch in s2:
+        dictis2[ch]=dictis2.get(ch,0)+1
+    print(dictis2)
+
+    if(dictis1==dictis2):
+        return True
+    else:
+        return False
+
+print(dictistrings("dasd","asdd"))
