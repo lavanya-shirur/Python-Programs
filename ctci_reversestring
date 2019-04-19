@@ -1,0 +1,18 @@
+def reverse_string(string1):
+    rev=""
+    for i in range(len(string1),0,-1):
+        rev+=string1[i-1]
+    print(rev)
+
+#reverse_string("kumar")
+
+def rev(string1):
+    new=""
+    for i in reversed(string1):
+        new+=i
+    print(new)
+rev("ramukumar")
+
+# method 3
+string1="ramukumar"
+print(string1[::-1])
