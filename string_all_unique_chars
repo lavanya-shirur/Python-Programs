@@ -1,0 +1,26 @@
+#implement an alg to  see if a string has all unique charactres/ u cant use additional data structure ?
+#input="lavanya"  2. "lavy"
+# o/p - no  2. o/p - yes
+
+#1.set
+
+#2.two for loops
+
+#3.Isunique()
+
+#4.Ascii
+
+
+#2.two for loops
+def string_unique(arr):
+    arr=str(arr)
+    unique = True
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)):
+            print(arr[i],arr[j])
+            if arr[i] == arr[j]:
+                unique=False
+    return unique
+
+print(string_unique("laavy"))
+
