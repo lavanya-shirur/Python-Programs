@@ -1,0 +1,41 @@
+#266Palindrome Permutation
+
+def permutation(list):
+    if len(list)==0:
+        return []
+    if len(list)==1:
+        return [list]
+    else:
+        new=""
+        l=[]
+        for i in range(len(list)):
+            x=list[i]
+
+            xs=list[:i]+ list[i+1:]
+
+            for p in permutation(xs):
+                new=[x]+p
+                l.append(new)
+        return l
+
+list2=permutation([1,2,3])
+print(list2)
+
+for words in list2:
+    if words==words[::-1]:
+        print("True")
+        break
+    else:
+        print("False")
+
+
+
+def substring(string):
+    result=[]
+    for i in range(len(string)):
+        for length in range(len(string),len(string)-i+1):
+            result.append(string[i:i+length])
+    return result
+
+#print(substring("aba"))
+
