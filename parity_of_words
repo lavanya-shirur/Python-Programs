@@ -1,0 +1,42 @@
+##############
+#method 1
+##############
+"""
+def parity(word):
+    lenword=len(str(word))
+    new=[]
+    for i in range(lenword):
+        new.append(word%10)
+        word=word//10
+    print(new)
+    if sum(new) % 2 == 0:
+        return 0
+    else:
+        return 1
+
+print(parity(1100110))
+
+
+################
+#method 2
+################
+
+def parity(x):
+    result=0
+    while x:
+        result ^= x & 1
+        x >>= 1
+    return result
+
+print(parity(1011))
+"""
+
+
+def parity(x):
+    result=0
+    while x:
+        result ^=1
+        x &= x-1
+    return result
+
+print(parity(00101100))
