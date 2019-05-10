@@ -1,0 +1,22 @@
+
+def twoSumCloset(nums, target):
+    if (nums == None or len(nums) == 0):
+        return 0
+
+    nums= sorted(nums)
+    low = 0
+    high = len(nums)- 1
+    diff = 999
+
+    while (low < high):
+       # print(low,high)
+        sum = nums[low] + nums[high]
+        if (sum > target):
+            high-=1
+        else:
+            low+=1
+        diff = min(diff,abs(sum - target))
+    print(diff)
+    return diff
+
+print(twoSumCloset([1,2,-1,0],10))
