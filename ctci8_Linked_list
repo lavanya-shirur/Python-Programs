@@ -1,0 +1,153 @@
+class node:
+    def __init__(self,data=None):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head=node()
+
+    def append(self,data):
+        new_node=node(data)
+        cur=self.head
+        while cur.next!=None:
+            cur=cur.next
+        cur.next=new_node
+
+    def display(self):
+        elem=[]
+        cur = self.head
+        while cur.next != None:
+            cur = cur.next
+            elem.append(cur.data)
+        print (elem)
+
+    def rem_duplicates(self):
+        cur=self.head
+        res=[]
+        while cur.next!=None:
+            if cur.data == cur.next.data:
+                cur.next= cur.next.next
+            else:
+                cur=cur.next
+        return cur
+
+
+    def k_to_last(self,k):
+        counter=0
+        i=0
+        cur=self.head
+        while cur.next!=None:
+            counter+=1
+            cur=cur.next
+        position=counter-k
+        cur=self.head
+        while i<position:
+            cur=cur.next
+            i+=1
+        print(cur.data)
+        return cur
+
+    def deleteatptr(self,node):
+        if node.next==None:
+            node= None
+        else:
+            node.val=node.next.val
+            node.next=node.next.next
+
+    def partition(self ,x):
+        small=[]
+        big=[]
+        new=[]
+        cur=self.head
+        while cur:
+            if cur.data<x:
+                small.append(cur.data)
+            else:
+                big.append(cur.data)
+            cur=cur.next
+        new= small[1:]+big
+        print(new)
+
+
+    def partition_no_extraspace(self, x):
+        small = smallhead = node(0)
+        big = bighead = node(0)
+        smalllist=biglist=[]
+        cur=self.head
+        while cur:
+            if cur.data < x:
+                smallhead.next = cur
+                smallhead = smallhead.next
+            else:
+                bighead.next = cur
+                bighead = bighead.next
+            cur = cur.next
+
+        bighead.next = None
+        smallhead.next = big.next
+        return small.next
+
+
+    def get(self,index):
+        count=0
+        cur=self.head
+        while cur.next!=None:
+            if count==index:
+                print(cur.data)
+            cur = cur.next
+            count += 1
+
+    def addTwoNumbers(self, l1, l2):
+        newnode = node(0)
+        res = 0
+        while l1 or l2 or res:
+            if l1:
+                res += l1.val
+                l1 = l1.next
+            if l2:
+                res += l2.val
+                l2 = l2.next
+        newnode.val = res % 10
+        newnode = newnode.next
+        res = res // 10
+        print(res)
+        # print(newnode.val)
+
+    def reversell(self):
+        cur=self.head
+        prev = None
+        while cur!=None:
+            next=cur.next
+            cur.next=prev
+            prev=cur
+            cur=next
+        self.head=prev
+        return self.head
+
+my_list=linkedlist()
+my_list.append(2)
+my_list.append(4)
+my_list.append(8)
+my_list.append(3)
+#my_list.rem_duplicates()
+#my_list.display()
+#my_list.k_to_last(0)
+#my_list.deleteatptr(8)
+#my_list.display()
+#my_list.partition(4)
+#print(my_list.get(3))
+#my_list.partition_no_extraspace(4)
+my_list.display()
+my_list.reversell()
+my_list.display()
+
+
+
+my_list2=linkedlist()
+my_list2.append(9)
+my_list2.append(9)
+my_list2.append(9)
+my_list2.append(9)
+
+#print(addTwoNumbers(my_list,my_list2))
