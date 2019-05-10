@@ -1,0 +1,24 @@
+import string
+
+def reverse_words(s):
+    s=s[::-1]
+    return s
+    def reverse_range(s,start,end):
+        while start<end :
+            s[start],s[end]=s[end],s[start]
+            start,end = start+1 , end-1
+            print(start,end)
+
+    start=0
+    while True:
+        wnd=s.find(b'',start)
+        if end < 0:
+            break
+        reverse_range(s,start,end-1)
+        start=end+1
+    reverse_range(s,start,len(s)-1)
+
+s="kumar loves lavanya"
+arr = bytearray(s, 'utf-8')
+print(arr)
+print(reverse_words(s))
