@@ -1,0 +1,19 @@
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        
+        s=s.encode('ascii')
+        t=t.encode('ascii')
+        
+        nums=numt=0
+        for s_ch in s:
+            nums+=ord(s_ch)
+        for t_ch in t:
+            numt+=ord(t_ch)
+    
+    
+        return (chr(numt-nums))
