@@ -1,0 +1,25 @@
+def bottom_up_fib(n):
+    if n==1 or n==2:
+        return 1
+    bottom_up = [None] * (n+1)
+    print(bottom_up)
+
+    bottom_up[1]=1
+    bottom_up[2]=1
+    for i in range(3,n+1):
+        bottom_up[i] = bottom_up[i-1] +bottom_up[i-2]
+        print(bottom_up)
+    return bottom_up[n]
+
+
+def fib(n):
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    for i in range(n+1):
+        return (fib(n-1)+fib(n-2))
+
+
+print(bottom_up_fib(100))
+#print(fib(35))
