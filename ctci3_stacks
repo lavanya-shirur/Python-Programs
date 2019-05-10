@@ -1,0 +1,30 @@
+class stack:
+    def __init__(self):
+        self.items=[]
+    def push(self,x):
+        self.items.append(x)
+    def pop(self):
+        self.items.pop()
+
+    def display(self):
+        print(self.items)
+
+    def isempty(self):
+        return self.items ==[]
+
+    def top(self):
+        return self.items[-1]
+
+
+stack_object=stack()
+stack_object.push(4)
+stack_object.push(9)
+stack_object.push(12)
+stack_object.pop()
+#stack_object.pop()
+#stack_object.pop()
+#stack_object.display()
+stack_object.isempty()
+stack_object.display()
+print(stack_object.top())
+print(stack_object.isempty())
