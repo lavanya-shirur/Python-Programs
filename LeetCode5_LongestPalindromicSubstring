@@ -1,0 +1,50 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        
+        left=right=0
+        lenlist=[]
+        res=[]
+        for i in range(len(s)):
+            if s[left]==s[right]:
+                res.append(s[left:right])
+                right=right+1
+                if res==res[::-1]:
+                    print(res)
+                    lenlist.append(len(res))
+            else:
+                left=left+1
+        print(lenlist)
+        """
+        new=[]
+        final=[]
+        output=""
+        if len(s)>1:
+            
+            new=self.substring(s)
+
+            for j in range(len(new)):
+                if new[j]==new[j][::-1]:
+                    final.append(new[j])
+            print(final)
+            maximum=0
+            for k in range(len(final)):
+                
+                if len(final[k]) > maximum:
+                    maximum=len(final[k])
+                    output=final[k]
+            
+            print(output)
+            return (output)
+        else:
+            return s
+            
+    def substring(self,s):
+        res=[]
+        for i in range(len(s)):
+            for length in range(i+1,len(s)-i+1):
+                res.append(s[i:i+length])
+        print(res)
+        return (res)
