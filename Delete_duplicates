@@ -1,0 +1,18 @@
+#arr=[2,3,5,6,7,7,8,8,8,8,9]
+
+def del_duplicates(arr):
+    inde=1
+    newarr=[]
+    for i in range(1,len(arr)):
+        if arr[inde-1]!=arr[i]:
+            arr[inde]=arr[i]
+            inde+=1
+            newarr.append(arr[i])
+    newarr.append(arr[0])
+    newarr.sort()
+    return newarr
+
+new=[]
+arr=[2,3,5,6,7,7,8,8,8,8,9]
+print(del_duplicates(arr))
+
