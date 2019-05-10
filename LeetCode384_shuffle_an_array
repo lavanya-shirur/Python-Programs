@@ -1,0 +1,41 @@
+import random 
+class Solution(object):
+
+    def __init__(self, nums):
+        """
+        :type nums: List[int]
+        """
+        #create instance of nums to be used in the below methods 
+        self.nums_shuffle=nums
+        self.original=list(nums)
+       
+    def reset(self):
+        """
+        Resets the array to its original configuration and return it.
+        :rtype: List[int]
+        """
+        #return the original list 
+        return self.original
+
+    def shuffle(self):
+        """
+        Returns a random shuffling of the array.
+        :rtype: List[int]
+        """
+        #shuffling using fiesher yates algorithm 
+        for i in range(len(self.nums_shuffle)):
+            
+            #generate random numbers 
+            j=random.randint(i,len(self.nums_shuffle)-1)
+            
+            #swap the elements 
+            self.nums_shuffle[i],self.nums_shuffle[j] = self.nums_shuffle[j],self.nums_shuffle[i]
+            
+        return self.nums_shuffle
+        
+
+
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(nums)
+# param_1 = obj.reset()
+# param_2 = obj.shuffle()
