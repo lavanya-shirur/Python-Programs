@@ -1,0 +1,31 @@
+class Solution(object):
+    def numSquares(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        
+        if n<=3:
+            return n
+        
+        sq=int(math.sqrt(n))
+        newlist=[]
+        for i in range(sq):
+            newlist.append(i*i)
+       
+        newlist=sorted(newlist)[::-1]
+        print(newlist)
+    
+        final=[]
+        for j in range(len(newlist)):
+            if n%newlist[j]==0:
+                k=n//newlist[j]
+                return k 
+            else:
+                if (n-newlist[i]) in newlist:
+                    final.append(newlist[i],(n-newlist[i]))
+                    return len(final)
+        
+                    
+
+                
