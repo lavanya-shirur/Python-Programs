@@ -1,0 +1,37 @@
+import operator
+def chain(word_set, store, word):
+    if word not in store:
+        ret = 1
+        for i in range(len(word)):
+            w = word[:i] + word[i+1:]
+            if w and w in word_set:
+                cnt = chain(word_set, store, w)
+                ret = max(ret, 1 + cnt)
+        store[word] = ret
+    return store[word]
+
+def longestChain(words):
+    store = {}
+    word_set = set(words)
+    gmax = 0
+    dicti = {}
+    for word in words:
+        dicti[word] = len(word)
+    #print(dicti)
+    sorted_x=sorted(dicti.items(), key=lambda x: x[1],reverse=True)
+    #sorted_x = sorted(dicti.items(), key=operator.itemgetter(1), reverse=True)
+
+
+    for word in sorted_x:
+        if(gmax < len(word)):
+            print(word[0])
+            gmax = max(gmax, longest(word_set, store, word[0]))
+    print(gmax)
+    return gmax
+
+words=["kumar","kuma","kum","ku","k","lavanya","lavany","lavan","lava","lav","la","l","acaxeededwede","lav"]
+longestChain(words)
+
+if __name__ == "__main__":
+    words = ["6","a", "b", "ba", "bca", "bda", "bdca"]
+    #assert longestChain(words) == 4
