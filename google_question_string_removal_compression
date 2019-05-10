@@ -1,0 +1,25 @@
+"""
+
+Given a string that contains alphabetic characters, remove pairs of xX or Xx where the two chars in the pair are the same letter in different case. So xX is removed, Xx is removed, but xx and XX are not.
+
+Sample input: abcCkDdppGGa
+Sample output: abkppGGa
+"""
+
+def rem(A):
+    k=32
+    removed=[]
+    stacki=[]
+
+    for i in range(0,len(A)):
+        stacki.append(A[i])
+        print(stacki)
+        if abs(ord(A[i-1])-ord(A[i]))==k:
+            stacki.remove(A[i])
+            stacki.remove(A[i-1])
+    return stacki
+#    new=rem(stacki)
+
+stri=rem("ABbadeWwefF")
+print(stri)
+
