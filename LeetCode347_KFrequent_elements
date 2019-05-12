@@ -1,0 +1,11 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        dicti={}
+        for num in nums:
+            dicti[num]=dicti.get(num,0)+1
+        return heapq.nlargest(k, dicti.keys(), key=dicti.get) 
