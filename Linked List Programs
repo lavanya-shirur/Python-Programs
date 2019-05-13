@@ -106,7 +106,23 @@ class linkedlist:
             cur=cur.next
         result.append(cur.data)
         return result
+        
+    def deleteatmiddle(self):
+        cur=self.head
+        length=0
+        while cur.next!=None:
+            length+=1
+            cur=cur.next
+        middlepos=length//2
+        print(middlepos)
 
+        pos=0
+        cur = self.head
+        while pos!=middlepos:
+            pos += 1
+            cur = cur.next
+        cur.next=cur.next.next
+        return cur
 
 my_list=linkedlist()
 #my_list.display()
