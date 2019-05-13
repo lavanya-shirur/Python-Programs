@@ -94,6 +94,18 @@ class linkedlist:
         #print(self.head)
         #return self.head
 
+    def Ktolast(self,k):
+        cur = self.head
+        count = 0
+        result = []
+        while count != k:
+            count += 1
+            cur = cur.next
+        while cur.next!=None:
+            result.append(cur.data)
+            cur=cur.next
+        result.append(cur.data)
+        return result
 
 
 my_list=linkedlist()
