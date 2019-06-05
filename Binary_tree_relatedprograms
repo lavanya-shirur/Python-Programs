@@ -1,0 +1,87 @@
+class Node:
+    def __init__(self,value):
+        self.value=value
+        self.left=None
+        self.right=None
+
+class BinaryTree:
+    def __init__(self,root):
+        self.root=Node(root)
+
+    def printtree(self,traversaltype):
+        if traversaltype == "inorder":
+            return self.inorder(tree.root, "")
+
+        if traversaltype=="preorder":
+            return self.preorder(tree.root,"")
+
+        if traversaltype=="postorder":
+            return self.postorder(tree.root,"")
+
+    def inorder(self,root,traversal):
+        #left , root , right
+        if root:
+            traversal = self.inorder(root.left,traversal)
+            traversal += (str(root.value)+ ",")
+            traversal= self.inorder(root.right,traversal)
+        return traversal
+
+    def preorder(self,root,traversal):
+        #root , left, right
+        if root:
+            traversal += (str(root.value)+",")
+            traversal = self.preorder(root.left,traversal)
+            traversal = self.preorder(root.right,traversal)
+        return traversal
+
+    def postorder(self,root,traversal):
+        # left , right , root
+        if root:
+            traversal= self.postorder(root.left,traversal)
+            traversal= self.postorder(root.right,traversal)
+            traversal+=(str(root.value)+",")
+        return traversal
+
+    def check_height(self,root):
+        if self.root is None:
+            return 0
+
+        ldepth= self.check_height(root.left)
+        rdepth= self.check_height(root.right)
+        #print(ldepth)
+        return rdepth
+
+    def get_height(self,root):
+        if self.root is None:
+            return 0
+        return 1 + max(self.get_height(self.root.left), self.get_height(self.root.right))
+
+    def issame(self,tree1,tree2):
+        if tree1==None and tree2==None:
+            return True
+        if tree1!=None and tree2==None:
+            return False
+        if tree1==None and tree2!=None:
+            return False
+        return tree1.value==tree2.value and self.issame(tree1.left,tree2.left) and self.issame(tree1.right,tree2.right)
+
+
+tree=BinaryTree(1)
+tree.root.left=Node(2)
+tree.root.right=Node(3)
+tree.root.right.right=Node(4)
+tree.root.right.left=Node(5)
+
+tree2=BinaryTree(1)
+tree2.root.left=Node(2)
+tree2.root.right=Node(3)
+tree2.root.right.right=Node(4)
+tree2.root.right.left=Node(5)
+
+print("inorder ->",tree.printtree("inorder"))
+print("preorder->",tree.printtree("preorder"))
+print("postorder=>",tree.printtree("postorder"))
+#print(tree.check_height(self.root))
+#print(tree.get_height())
+
+print(tree.issame(tree,tree2))
