@@ -1,0 +1,71 @@
+class Node:
+    # Constructor to create a new Node
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+# function to find height of binary tree
+def height(root):
+    # base condition when binary tree is empty
+    if root is None:
+        return 0
+    return max(height(root.left), height(root.right)) + 1
+
+# function to check if tree is height-balanced or not
+def isBalanced(root):
+    # Base condition
+    if root is None:
+        return True
+
+    # for left and right subtree height
+    lh = height(root.left)
+    rh = height(root.right)
+
+    # allowed values for (lh - rh) are 1, -1, 0
+    if (abs(lh - rh) <= 1):
+            #and isBalanced(root.left) is True and isBalanced(root.right) is True:
+        return True
+    else:
+    # if we reach here means tree is not
+    # height-balanced tree
+        return False
+
+def identicalTrees(a, b):
+    # 1. Both empty
+    if a is None and b is None:
+        return True
+        # 2. Both non-empty -> Compare them
+    if a is not None and b is not None:
+        return ((a.data == b.data) and identicalTrees(a.left, b.left) and identicalTrees(a.right, b.right))
+
+        # 3. one empty, one not -- false
+    return False
+
+# Driver function to test the above function
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+root2=Node(1)
+root2.left = Node(2)
+root2.right = Node(3)
+root2.left.left = Node(4)
+root2.left.right = Node(5)
+
+if identicalTrees(root, root2):
+    print "Both trees are identical"
+else:
+    print "Trees are not identical"
+
+
+#root.left.left.left = Node(8)
+if isBalanced(root):
+    print("Tree is balanced")
+else:
+    print("Tree is not balanced")
+
+print(height(root))
